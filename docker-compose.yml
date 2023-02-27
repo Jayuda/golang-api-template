@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  web:
+    restart: always
+    container_name: CHICK-SERVICE-TEMPLATE
+    image: registry.gitlab.com/voltunes/chick/api-template:${TAG}
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "1m"
+networks:
+  default:
+    external:
+      name: chick
