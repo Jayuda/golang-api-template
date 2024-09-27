@@ -2,10 +2,10 @@ package app
 
 import (
 	"fmt"
+	"golang-api-template/exception"
+	"golang-api-template/route"
 	"runtime/debug"
 	"time"
-	"voltunes-chick-api-master-product/exception"
-	"voltunes-chick-api-master-product/route"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"

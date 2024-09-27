@@ -1,10 +1,10 @@
 package route
 
 import (
-	"voltunes-chick-api-master-product/auth"
-	"voltunes-chick-api-master-product/controller"
-	"voltunes-chick-api-master-product/repository"
-	"voltunes-chick-api-master-product/service"
+	"golang-api-template/auth"
+	"golang-api-template/controller"
+	"golang-api-template/repository"
+	"golang-api-template/service"
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"

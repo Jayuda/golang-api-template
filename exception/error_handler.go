@@ -2,10 +2,10 @@ package exception
 
 import (
 	"errors"
+	"golang-api-template/helper"
+	"golang-api-template/model/web"
 	"net/http"
 	"strings"
-	"voltunes-chick-api-master-product/helper"
-	"voltunes-chick-api-master-product/model/web"
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"

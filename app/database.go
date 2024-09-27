@@ -2,10 +2,10 @@ package app
 
 import (
 	"fmt"
+	"golang-api-template/model/domain"
 	"log"
 	"os"
 	"time"
-	"voltunes-chick-api-master-product/model/domain"
 
 	"gorm.io/driver/mysql"
 

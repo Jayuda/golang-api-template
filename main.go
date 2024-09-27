@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
+	"golang-api-template/app"
+	"golang-api-template/helper"
 	"log"
 	"net/http"
 	"os"
-	"voltunes-chick-api-master-product/app"
-	"voltunes-chick-api-master-product/helper"
 
 	"github.com/go-playground/validator/v10"
 	"github.com/joho/godotenv"

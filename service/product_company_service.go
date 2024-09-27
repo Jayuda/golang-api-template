@@ -1,8 +1,8 @@
 package service
 
 import (
-	"voltunes-chick-api-master-product/auth"
-	"voltunes-chick-api-master-product/model/web"
+	"golang-api-template/auth"
+	"golang-api-template/model/web"
 )
 
 type ProductCompanyService interface {

@@ -1,7 +1,7 @@
 package controller
 
 import (
-	"voltunes-chick-api-master-product/auth"
+	"golang-api-template/auth"
 
 	"github.com/gin-gonic/gin"
 )

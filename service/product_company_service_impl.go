@@ -2,11 +2,11 @@ package service
 
 import (
 	"fmt"
-	"voltunes-chick-api-master-product/auth"
-	"voltunes-chick-api-master-product/helper"
-	"voltunes-chick-api-master-product/model/domain"
-	"voltunes-chick-api-master-product/model/web"
-	"voltunes-chick-api-master-product/repository"
+	"golang-api-template/auth"
+	"golang-api-template/helper"
+	"golang-api-template/model/domain"
+	"golang-api-template/model/web"
+	"golang-api-template/repository"
 
 	"github.com/go-playground/validator/v10"
 	"gorm.io/gorm"

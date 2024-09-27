@@ -1,7 +1,7 @@
 package domain
 
 import (
-	"voltunes-chick-api-master-product/model/web"
+	"golang-api-template/model/web"
 
 	"gorm.io/gorm"
 )

@@ -1,12 +1,12 @@
 package controller
 
 import (
+	"golang-api-template/auth"
+	"golang-api-template/helper"
+	"golang-api-template/model/web"
+	"golang-api-template/service"
 	"net/http"
 	"strconv"
-	"voltunes-chick-api-master-product/auth"
-	"voltunes-chick-api-master-product/helper"
-	"voltunes-chick-api-master-product/model/web"
-	"voltunes-chick-api-master-product/service"
 
 	"github.com/gin-gonic/gin"
 )

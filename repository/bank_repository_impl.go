@@ -1,8 +1,8 @@
 package repository
 
 import (
-	"voltunes-chick-api-master-product/helper"
-	"voltunes-chick-api-master-product/model/domain"
+	"golang-api-template/helper"
+	"golang-api-template/model/domain"
 
 	"gorm.io/gorm"
 )

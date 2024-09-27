@@ -2,14 +2,15 @@ package auth
 
 import (
 	"fmt"
-	"github.com/dgrijalva/jwt-go"
-	"github.com/gin-gonic/gin"
+	"golang-api-template/exception"
+	"golang-api-template/helper"
 	"net/http"
 	"os"
 	"strconv"
 	"strings"
-	"voltunes-chick-api-master-product/exception"
-	"voltunes-chick-api-master-product/helper"
+
+	"github.com/dgrijalva/jwt-go"
+	"github.com/gin-gonic/gin"
 )
 
 type CreateAuthFunc func(userID uint, tokenDetails *TokenDetails)
