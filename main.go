@@ -19,6 +19,8 @@ func main() {
 	}
 
 	port := os.Getenv("PORT")
+	fmt.Println(port)
+	fmt.Println("====================================")
 	db := app.ConnectDatabase()
 
 	// Validator

@@ -1,12 +1,13 @@
 package app
 
 import (
+	"fmt"
 	"log"
 	"os"
 	"time"
 	"voltunes-chick-api-master-product/model/domain"
 
-	"gorm.io/driver/postgres"
+	"gorm.io/driver/mysql"
 
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
@@ -21,16 +22,22 @@ func ConnectDatabase() *gorm.DB {
 			Colorful:      true,
 		},
 	)
-	dsn := "host=192.168.0.1 user=postgres password=postgres dbname=dbtest port=6655 sslmode=disable TimeZone=Asia/Jakarta"
-	database, err := gorm.Open(postgres.Open(dsn), &gorm.Config{
+	dsn := fmt.Sprintf(
+		"%s:%s@tcp(%s:%s)/%s?parseTime=true",
+		os.Getenv("DB_USER"),
+		os.Getenv("DB_PASS"),
+		os.Getenv("DB_HOST"),
+		os.Getenv("DB_PORT"),
+		os.Getenv("DB_NAME"),
+	)
+
+	database, err := gorm.Open(mysql.Open(dsn), &gorm.Config{
 		Logger: newLogger,
 	})
+
 	if err != nil {
 		panic("failed to connect database")
 	}
-
-	// RUN before_auto_migrate.sql
-	// helper.RunSQLFromFile(database, "app/database/before_auto_migrate.sql")
 
 	err = database.AutoMigrate(
 		// Bank

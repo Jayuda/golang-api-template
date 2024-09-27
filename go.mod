@@ -1,6 +1,6 @@
-module voltunes-chick-api-master-product
+module golang-api-template
 
-go 1.17
+go 1.22
 
 require (
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
@@ -9,8 +9,7 @@ require (
 	github.com/go-playground/validator/v10 v10.10.0
 	github.com/joho/godotenv v1.4.0
 	github.com/stretchr/testify v1.7.0
-	gorm.io/driver/postgres v1.3.7
-	gorm.io/gorm v1.23.4
+	gorm.io/gorm v1.25.7
 )
 
 require (
@@ -18,6 +17,7 @@ require (
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-playground/locales v0.14.0 // indirect
 	github.com/go-playground/universal-translator v0.18.0 // indirect
+	github.com/go-sql-driver/mysql v1.7.0 // indirect
 	github.com/golang/protobuf v1.3.3 // indirect
 	github.com/jackc/chunkreader/v2 v2.0.1 // indirect
 	github.com/jackc/pgconn v1.12.1 // indirect
@@ -28,7 +28,7 @@ require (
 	github.com/jackc/pgtype v1.11.0 // indirect
 	github.com/jackc/pgx/v4 v4.16.1 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
-	github.com/jinzhu/now v1.1.4 // indirect
+	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/json-iterator/go v1.1.9 // indirect
 	github.com/leodido/go-urn v1.2.1 // indirect
 	github.com/mattn/go-isatty v0.0.12 // indirect
@@ -41,4 +41,5 @@ require (
 	golang.org/x/text v0.3.7 // indirect
 	gopkg.in/yaml.v2 v2.2.8 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
+	gorm.io/driver/mysql v1.5.7 // indirect
 )
