@@ -2,8 +2,6 @@ package auth
 
 import (
 	"fmt"
-	"golang-api-template/exception"
-	"golang-api-template/helper"
 	"net/http"
 	"os"
 	"strconv"
@@ -33,18 +31,18 @@ type TokenDetails struct {
 
 func Auth(next func(c *gin.Context, auth *AccessDetails), roles []string) gin.HandlerFunc {
 	return func(c *gin.Context) {
-		// Check JWT Token
-		tokenAuth, err := ExtractTokenMetadata(c.Request)
-		if err != nil {
-			helper.PanicIfError(exception.ErrUnauthorized)
-		}
+		// // Check JWT Token
+		// tokenAuth, err := ExtractTokenMetadata(c.Request)
+		// if err != nil {
+		// 	helper.PanicIfError(exception.ErrUnauthorized)
+		// }
 
 		// Check Permission User
 		// if !helper.Contains(roles, tokenAuth.Role) {
 		// 	helper.PanicIfError(exception.ErrPermissionDenied)
 		// }
 
-		next(c, tokenAuth)
+		next(c, nil)
 	}
 }
 
