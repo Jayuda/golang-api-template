@@ -1,6 +1,7 @@
 package service
 
 import (
+	"fmt"
 	"golang-api-template/auth"
 	"golang-api-template/helper"
 	"golang-api-template/model/domain"
@@ -41,20 +42,15 @@ func (service *BankServiceImpl) FindAll(auth *auth.AccessDetails, filters *map[s
 }
 
 func (service *BankServiceImpl) Create(auth *auth.AccessDetails, request *web.BankCreateRequest) web.BankResponse {
-	err := service.Validate.Struct(request)
-	helper.PanicIfError(err)
+	fmt.Println(request)
 
 	tx := service.DB.Begin()
-	err = tx.Error
+	err := tx.Error
 	helper.PanicIfError(err)
 	defer helper.CommitOrRollback(tx)
 
 	helper.PanicIfError(err)
 	city := &domain.Bank{
-		// Required Fields
-		CreatedByID: auth.UserID,
-		UpdatedByID: auth.UserID,
-
 		// Fields
 		Name: request.Name,
 	}
@@ -69,7 +65,7 @@ func (service *BankServiceImpl) Delete(auth *auth.AccessDetails, id *int) {
 	helper.PanicIfError(err)
 
 	defer helper.CommitOrRollback(tx)
-	service.BankRepository.Delete(tx, id, &auth.UserID)
+	service.BankRepository.Delete(tx, id, nil)
 }
 
 func (service *BankServiceImpl) Update(auth *auth.AccessDetails, id *int, request *web.BankUpdateRequest) web.BankResponse {
@@ -82,8 +78,7 @@ func (service *BankServiceImpl) Update(auth *auth.AccessDetails, id *int, reques
 	helper.PanicIfError(err)
 	subject := &domain.Bank{
 		// Required Fields
-		Model:       gorm.Model{ID: uint(*id)},
-		UpdatedByID: auth.UserID,
+		Model: gorm.Model{ID: uint(*id)},
 
 		//  Fields
 		Name: request.Name,

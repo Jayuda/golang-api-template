@@ -9,8 +9,7 @@ import (
 
 func ReadFromRequestBody(c *gin.Context, result interface{}) {
 	decoder := json.NewDecoder(c.Request.Body)
-	err := decoder.Decode(result)
-	PanicIfError(err)
+	_ = decoder.Decode(result)
 }
 
 func WriteToResponseBody(writer http.ResponseWriter, response interface{}) {

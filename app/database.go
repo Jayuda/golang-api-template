@@ -2,7 +2,6 @@ package app
 
 import (
 	"fmt"
-	"golang-api-template/model/domain"
 	"log"
 	"os"
 	"time"
@@ -39,13 +38,13 @@ func ConnectDatabase() *gorm.DB {
 		panic("failed to connect database")
 	}
 
-	err = database.AutoMigrate(
-		// Bank
-		&domain.Bank{},
-	)
-	if err != nil {
-		panic("failed to auto migrate schema")
-	}
+	// err = database.AutoMigrate(
+	// 	// Bank
+	// 	&domain.Bank{},
+	// )
+	// if err != nil {
+	// 	panic("failed to auto migrate schema")
+	// }
 
 	// RUN after_auto_migrate.sql
 	// helper.RunSQLFromFile(database, "app/database/after_auto_migrate.sql")
