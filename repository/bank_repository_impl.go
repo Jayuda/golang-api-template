@@ -16,10 +16,12 @@ func NewBankRepository() BankRepository {
 
 func (repository *BankRepositoryImpl) FindAll(db *gorm.DB, filters *map[string]string) domain.Banks {
 	banks := domain.Banks{}
-	tx := db.Model(&domain.Bank{})
+	tx := db.Model(&domain.Bank{}) // SELECT * FROM banks
 
 	err := helper.ApplyFilter(tx, filters)
 	helper.PanicIfError(err)
+
+	// SELECT * FROM banks WHERE deleted_at IS NULL AND name = 'Bank Caty'
 
 	err = tx.Find(&banks).Error
 	helper.PanicIfError(err)

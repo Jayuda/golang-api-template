@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"fmt"
 	"golang-api-template/auth"
 	"golang-api-template/helper"
 	"golang-api-template/model/web"
@@ -22,7 +23,8 @@ func NewBankController(bankService service.BankService) BankController {
 }
 
 func (controller *BankControllerImpl) FindAll(c *gin.Context, auth *auth.AccessDetails) {
-	filters := helper.FilterFromQueryString(c, "name.like")
+	filters := helper.FilterFromQueryString(c, "name.eq")
+	fmt.Println(filters)
 	bankResponses := controller.BankService.FindAll(auth, &filters)
 	webResponse := web.WebResponse{
 		Success: true,

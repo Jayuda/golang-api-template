@@ -1,0 +1,18 @@
+[
+        {
+                "menu":"Master Bank",
+                "table":"banks",
+                "column":[
+                        {
+                                "name":"name",
+                                "type":"varchar(255)"
+                        }
+                ],
+                "view":{
+                        "column":[]
+                },
+                "add":{
+                        "column":[]
+                }
+        }
+]
